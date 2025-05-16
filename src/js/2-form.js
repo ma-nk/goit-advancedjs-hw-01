@@ -1,12 +1,12 @@
-const form = document.querySelector("form");
+const form = document.querySelector('form');
 
-const keyLS = "feedback-form-state";
+const keyLS = 'feedback-form-state';
 const emailInput = form.elements.email;
 const messageInput = form.elements.message;
 
 const formData = {
-  email: "",
-  message: "",
+  email: '',
+  message: '',
 };
 
 const inputsOnPageLoad = () => {
@@ -22,8 +22,8 @@ const inputsOnPageLoad = () => {
 };
 inputsOnPageLoad();
 
-form.addEventListener("input", onInputsUpdate);
-form.addEventListener("submit", onSubmit);
+form.addEventListener('input', onInputsUpdate);
+form.addEventListener('submit', onSubmit);
 
 function onInputsUpdate() {
   formData.email = emailInput.value;
@@ -33,13 +33,13 @@ function onInputsUpdate() {
 
 function onSubmit(evt) {
   evt.preventDefault();
-  if (emailInput.value === "" || messageInput.value === "") {
-    alert("Fill please all fields");
+  if (emailInput.value === '' || messageInput.value === '') {
+    alert('Fill please all fields');
     return;
   }
   console.log(formData);
   localStorage.removeItem(keyLS);
-  formData.email = "";
-  formData.message = "";
+  formData.email = '';
+  formData.message = '';
   evt.target.reset();
 }

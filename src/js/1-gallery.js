@@ -1,4 +1,4 @@
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 
 const images = [
   {
@@ -66,30 +66,30 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector(".gallery");
+const gallery = document.querySelector('.gallery');
 
 const items = images.map(({ preview, original, description }) => {
-    const item = document.createElement("li");
-    item.classList.add("gallery-item");
-    const link = document.createElement("a");
-    link.onclick = (evt) => evt.preventDefault();
-    link.classList.add("gallery-link");
-    link.setAttribute("href", original);
-    const img = document.createElement("img");
-    img.classList.add("gallery-image");
-    img.setAttribute("src", preview);
-    img.dataset.source = original;
-    img.setAttribute("alt", description);
-    img.setAttribute("width", "360");
-    img.setAttribute("height", "200");
-    link.append(img);
-    item.append(link);
-    return item
-})
+  const item = document.createElement('li');
+  item.classList.add('gallery-item');
+  const link = document.createElement('a');
+  link.onclick = evt => evt.preventDefault();
+  link.classList.add('gallery-link');
+  link.setAttribute('href', original);
+  const img = document.createElement('img');
+  img.classList.add('gallery-image');
+  img.setAttribute('src', preview);
+  img.dataset.source = original;
+  img.setAttribute('alt', description);
+  img.setAttribute('width', '360');
+  img.setAttribute('height', '200');
+  link.append(img);
+  item.append(link);
+  return item;
+});
 gallery.append(...items);
 
-const simpleGallery = new SimpleLightbox(".gallery a", {
-  captionsData: "alt",
+const simpleGallery = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
   overlayOpacity: 1,
   captionDelay: 250,
 });
